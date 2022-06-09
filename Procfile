@@ -1,1 +1,1 @@
-web: npm run db:migrations && npm run start
+web: npm run start
