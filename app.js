@@ -25,8 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//const knex = Knex(knexConfig);
-//Model.knex(knex);
+const knex = Knex(knexConfig);
+Model.knex(knex);
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);

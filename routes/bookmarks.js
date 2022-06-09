@@ -1,6 +1,4 @@
 const express = require('express');
-const { readFile, writeFile } = require('fs/promises');
-const crypto = require('crypto');
 const Bookmark = require('../database/models/Bookmark');
 const router = express.Router();
 
