@@ -12,9 +12,6 @@ const { Model } = require('objection');
 const Knex = require('knex');
 const knexConfig = require('./knexfile');
 
-const knex = Knex(knexConfig);
-Model.knex(knex);
-
 var app = express();
 
 // view engine setup
@@ -27,6 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const knex = Knex(knexConfig);
+Model.knex(knex);
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
